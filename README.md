@@ -2,16 +2,19 @@
 
 <img src="https://i.imgur.com/dBaSKWF.gif" height="90" width="100%">
 
-<div align="center"> 
-  <a href="https://readme-typing-svg.demolab.com?font=Ribeye&size=50&pause=1000&color=33ff00&center=true&width=910&height=100&lines=MOSES-XD;Multi+Device+Whatsapp+Bot+Made+By+MR MOSES CLR" alt="Typing SVG" />
-  </a> 
-</div> 
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Transformers&size=80&pause=1000&color=0a00FF&center=true&width=1000&height=150&lines=MOSES-XD" alt="Typing SVG" />
+</p>
 
-<div align="center"> 
   <a href="https://youtube.com/@Marinyame studios"> 
     <img src="https://github.com/mrmosesclr/MOSES-XD/blob/main/assets/bot_image.jpg" alt="MOSES-XD" height="300"> 
   </a> 
 </div>
+
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Black+Ops+One&size=70&pause=1000&color=FF0000&center=true&width=1000&height=80&lines=By+MR+MOSES+CLR" alt="Typing SVG" />
+</p>
+
 
 ---
 
@@ -126,6 +129,8 @@ This project is licensed under the MIT License. However, you must:
 ## 📜 Copyright Notice
 
 Copyright (c) 2025 Munyaradzi V Marinyame. All rights reserved.
+![Mr Moses](https://files.catbox.moe/vzzoi2.jpg)
+
 
 This project contains code from various open source projects:
 - Baileys (MIT License)
