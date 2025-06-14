@@ -34,17 +34,7 @@ async function songCommand(sock, chatId, message) {
 
         // Send loading message
         await sock.sendMessage(chatId, {
-            text: `🎶 𝐘𝐓 𝐒𝐎𝐍𝐆 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃📻
-
-╭━━━━━━━━━●●►
-┢❑ 𝐓𝐢𝐭𝐥𝐞: ${audio.title}
-┢❑ 𝐅𝐨𝐫𝐦𝐚𝐭: ${audio.format}
-┢❑ 𝐓𝐢𝐦𝐞: ${audio.timestump || 'N/A'}
-┢❑ 𝐔𝐩𝐥𝐨𝐚𝐝𝐞𝐝: ${audio.ago || 'N/A'}
-┢❑ 𝐕𝐢𝐞𝐰𝐬: ${audio.views || 'N/A'}
-┢❑ 𝐋𝐢𝐤𝐞𝐬: ${audio.likes || 'N/A'}
-╰━━━━━━━━●●►
-_Downloading your song..._`
+            text: `*${video.title}*\n\n*Duration:* ${formatDuration(video.duration.seconds)}\n*Views:* ${formatNumber(video.views)}\n\n_Downloading your song..._\n> 𝗠𝗢𝗦𝗘𝗦-𝗫𝗗`
         }, { quoted: message });
 
         // Create temp directory if it doesn't exist
