@@ -1,4 +1,5 @@
 # MOSES-XD
+A smart WhatsApp bot created by Marinyame studios 
 
 <img src="https://i.imgur.com/dBaSKWF.gif" height="90" width="100%">
 
@@ -6,7 +7,7 @@
   <img src="https://readme-typing-svg.demolab.com?font=Transformers&size=80&pause=1000&color=0a00FF&center=true&width=1000&height=150&lines=MOSES-XD" alt="Typing SVG" />
 </p>
 
-  <a href="https://youtube.com/@Marinyame studios"> 
+  <a href="(https://youtube.com/@marinyamestudios)"> 
     <img src="https://github.com/mrmosesclr/MOSES-XD/blob/main/assets/bot_image.jpg" alt="MOSES-XD" height="300"> 
   </a> 
 </div>
@@ -35,14 +36,14 @@
 ### 2. Get Session ID
 
 ### 🍁 PORTAL CODE
-[![PORTAL_CODE](https://img.shields.io/badge/PORTAL_CODE-FF7700?style=for-the-badge&logo=matrix&logoColor=white&labelColor=000000)](https://moses-session-pair.onrender.com//)
+[![PORTAL_CODE](https://img.shields.io/badge/PORTAL_CODE-FF7700?style=for-the-badge&logo=matrix&logoColor=white&labelColor=000000)](https://moses-xd-pair-session.onrender.com)
 
 
 #### 🍁 OPTION ONE
-[![PAIR_CODE_1](https://img.shields.io/badge/PAIR_CODE_1-FF7700?style=for-the-badge&logo=matrix&logoColor=white&labelColor=000000)](https://moses-xd.onrender.com)
+[![PAIR_CODE_1](https://img.shields.io/badge/PAIR_CODE_1-FF7700?style=for-the-badge&logo=matrix&logoColor=white&labelColor=000000)](https://moses-xd-pair-session.onrender.com)
 
 #### 🍁 OPTION TWO
-[![PAIR_CODE_2](https://img.shields.io/badge/PAIR_CODE_2-FF00AA?style=for-the-badge&logo=matrix&logoColor=white&labelColor=000000)](https:///qr)
+[![PAIR_CODE_2](https://img.shields.io/badge/PAIR_CODE_2-FF00AA?style=for-the-badge&logo=matrix&logoColor=white&labelColor=000000)](https://moses-xd-pair-session.onrender.com)
 
 ## 🚀 DEPLOYMENT OPTIONS
 
@@ -82,7 +83,7 @@
 
 
 <div align="center">
-  <a href="https://moses-xd.onrender.com" target="_blank">
+  <a href="https://moses-xd-pair-session.onrender.com" target="_blank">
     <img src="https://img.shields.io/badge/GET%20PAIR%20CODE-Easy%20Method-ff4d4d?style=for-the-badge" alt="Generate Pair Code"/>
   </a>
 </div>
