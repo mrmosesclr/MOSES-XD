@@ -1,16 +1,17 @@
 const settings = require("../settings");
 async function aliveCommand(sock, chatId) {
     try {
-        const message = `*𝗠𝗢𝗦𝗘𝗦-𝗫𝗗 is Active!*\n\n` +
-                       `*Version:* ${settings.version}\n` +
-                       `*Status:* Online\n` +
-                       `*Mode:* Public\n\n` +
-                       `*🌟 Features:*\n` +
-                       `• Group Management\n` +
-                       `• Antilink Protection\n` +
-                       `• Fun Commands\n` +
-                       `• And more!\n\n` +
-                       `Type *.menu* for full command list`;
+        const message = `──〔 𝙈𝙊𝙎𝙀𝙎-𝙓𝘿 〕───
+> √        *_is Alive!_*
+
+✨𝘽𝙤𝙩 𝙎𝙩𝙖𝙩𝙪𝙨: Active ✅
+🌎 𝙈𝙤𝙙𝙚: Public 
+🚀 𝘼𝙡𝙞𝙫𝙚 𝙑𝙚𝙧𝙨𝙞𝙤𝙣: Latest(${settings.version})
+⏳ 𝙐𝙥𝙩𝙞𝙢𝙚: [Running...] 
+🛡️ _*Creator*_: Mr Moses
+
+ s𝘦𝘳𝘷𝘦𝘳 𝘳𝘦𝘢𝘥𝘺 𝘧𝘰𝘳 𝘢𝘤𝘵𝘪𝘰𝘯!
+> _*codeit.brandit.ownit*_`;
 
         await sock.sendMessage(chatId, {
             text: message,
