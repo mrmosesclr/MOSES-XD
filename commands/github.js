@@ -1,43 +1,33 @@
-async function githubCommand(sock, chatId) {
-    const repoInfo = `𝗠𝗢𝗦𝗘𝗦-𝗫𝗗
+const moment = require('moment-timezone');
+const fetch = require('node-fetch');
+const fs = require('fs');
+const path = require('path');
 
-『 *ɢɪᴛʜᴜʙ*』
-https://github.com/mrmosesclr/MOSES-XD
 
- 𓆩ғᴏʟʟᴏᴡ ᴏᴜʀ ᴄʜᴀɴɴᴇʟ𓆪
+async function githubCommand(sock, chatId, message) {
+  try {
+    const res = await fetch('https://api.github.com/repos/mrmosesclr/MOSES-XD');
+    if (!res.ok) throw new Error('Error fetching repository data');
+    const json = await res.json();
 
-https://whatsapp.com/channel/0029VaFdPojJkK70RWo2Bf1l
-   
-𓆩ғᴏʟʟᴏᴡ ᴏᴜʀ ɢʀᴏᴜᴘ𓆪
+    let txt = `*乂  𝗠𝗢𝗦𝗘𝗦-𝗫𝗗  乂*\n\n`;
+    txt += `✩  *Name* : ${json.name}\n`;
+    txt += `✩  *Watchers* : ${json.watchers_count}\n`;
+    txt += `✩  *Size* : ${(json.size / 1024).toFixed(2)} MB\n`;
+    txt += `✩  *Last Updated* : ${moment(json.updated_at).format('DD/MM/YY - HH:mm:ss')}\n`;
+    txt += `✩  *URL* : ${json.html_url}\n`;
+    txt += `✩  *Forks* : ${json.forks_count}\n`;
+    txt += `✩  *Stars* : ${json.stargazers_count}\n\n`;
+    txt += `*M̺͆O̺͆S̺͆E̺͆S̺͆-X̺͆D̺͆*`;
 
-https://chat.whatsapp.com/JGmReDo55rvAAe9GhgV8YO
+    // Use the local asset image
+    const imgPath = path.join(__dirname, '../assets/bot_image.jpg');
+    const imgBuffer = fs.readFileSync(imgPath);
 
-「 *ᴄʀᴇᴀᴛᴏʀ*」:
-https://wa.me/message/NJ5BNQW4XLQNC1
-
-> _#ғᴏʀᴋ ᴀɴᴅ sᴛᴀʀ ᴛʜᴇ ʀᴇᴘᴏsɪᴛᴏʀʏ_
-
-𓆩ု᪳ᴍᴀᴅᴇ ʙʏ ᴍʀ ᴍᴏsᴇs ᴄʟʀှ᪳𓆪`;
-
-    try {
-        await sock.sendMessage(chatId, {
-            text: repoInfo,
-            contextInfo: {
-                forwardingScore: 1,
-                isForwarded: true,
-                forwardedNewsletterMessageInfo: {
-                    newsletterJid: '120363203551855118@newsletter',
-                    newsletterName: '𝗠𝗢𝗦𝗘𝗦-𝗫𝗗',
-                    serverMessageId: -1
-                }
-            }
-        });
-    } catch (error) {
-        console.error('Error in github command:', error);
-        await sock.sendMessage(chatId, { 
-            text: '❌ Error fetching repository information.' 
-        });
-    }
+    await sock.sendMessage(chatId, { image: imgBuffer, caption: txt }, { quoted: message });
+  } catch (error) {
+    await sock.sendMessage(chatId, { text: '❌ Error fetching repository information.' }, { quoted: message });
+  }
 }
 
 module.exports = githubCommand; 
