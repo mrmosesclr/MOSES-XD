@@ -1,20 +1,23 @@
-const settings = require("../settings");
+const settings = require('../settings');
 const fs = require('fs');
-const path = require("path");
-async function helpCommand(_0x388974, _0x215cfa, _0x360cff) {
-  const _0x27840d = `
-  ➺ _𝐂𝐑𝐄𝐀𝐓𝐈𝐕𝐄 𝐌𝐈𝐍𝐃𝐒_
-╭─────────────···◈ 
-*┋*  🇿🇼ᴍᴀʀɪɴʏᴀᴍᴇ sᴛᴜᴅɪᴏs
-*┋*  *ᴏᴡɴᴇʀ*: ${settings.botOwner}  
-*┋*  *ᴠᴇʀsɪᴏɴ*: ${settings.version}
-*┋*  *ᴘʀᴇғɪx:*"." 
+const path = require('path');
+
+async function helpCommand(sock, chatId, message) {
+    const helpMessage = `
+*╭━━━[ᴍᴀʀɪɴʏᴀᴍᴇ sᴛᴜᴅɪᴏs]━━━╮*
+*┋*▧ *ʙᴏᴛɴᴀᴍᴇ*: ${settings.botName}
+*┋*▧ *ᴏᴡɴᴇʀ*: ${settings.botOwner}
+*┋*▧ *ᴠᴇʀsɪᴏɴ*: ${settings.version}
+*┋*▧ *ᴛᴏᴛᴀʟ ᴄᴍᴅs*: [100]
+*┋*▧ *ᴍᴏᴅᴇ*: Public
+*┋*▧ *ᴘʀᴇғɪx*: "."
 ╰─────────────╶╶···◈
 
-> 🌴𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒:
-╭─────────────···◈ 
+
+╭─────[ 𝐆𝐄𝐍𝐄𝐑𝐀𝐋 ]───···◈
 ┋      *ᴍᴏsᴇs-xᴅ*
-├❍ .menu/moses
+├❍ .menu
+├❍ .xd
 ├❍ .ping
 ├❍ .alive
 ├❍ .tts
@@ -82,10 +85,10 @@ async function helpCommand(_0x388974, _0x215cfa, _0x360cff) {
 > 「 *ɢɪᴛʜᴜʙ*」
 ╭─────────────···◈ 
 ┋     *ᴍᴏsᴇs-xᴅ*
-├❍ .mrmoses
+├❍ .xd2
 ├❍ .github
 ├❍ .script
-├❍ .clr
+├❍ .repo
 ╰─────────────╶╶···◈
 
 > 「 *ᴀɪ*」
@@ -93,6 +96,8 @@ async function helpCommand(_0x388974, _0x215cfa, _0x360cff) {
 ┋        *ᴍᴏsᴇs-xᴅ*
 ├❍ .gpt <qstn>
 ├❍ .gemini <qstn>
+├❍ .imagine <prompt>
+├❍ .flux <prompt>
 ╰─────────────╶╶···◈
 
 > 「 *ғᴜɴ*」
@@ -109,10 +114,13 @@ async function helpCommand(_0x388974, _0x215cfa, _0x360cff) {
 ├❍ .tictactoe 
 ├❍ .hangman
 ├❍ .guess
+├❍ .shayari
 ├❍ .trivia
 ├❍ .answer
 ├❍ .truth
 ├❍ .dare
+├❍ .roseday
+├❍ .goodnight 
 ╰─────────────╶╶···◈
 
 > 「 *ᴛᴇxᴛᴍᴀᴋᴇʀ*」
@@ -145,52 +153,56 @@ async function helpCommand(_0x388974, _0x215cfa, _0x360cff) {
 ├❍ .play
 ├❍ .song
 ├❍ .mp3
+├❍ .audio
 ├❍ .instagram
+├❍ .mp4
 ├❍ .facebook
 ├❍ .tiktok
+├❍ .video
 ╰─────────────╶╶···◈
 ━━━━━━━━━━━━━━━━━━━━━
 > _*ᴍᴀᴅᴇ ʙʏ ᴍʀ ᴍᴏsᴇs ᴄʟʀ*_
-𓆩ု᪳ғᴏʟʟᴏᴡ ᴄʜᴀɴɴᴇʟ ғᴏʀ ᴜᴘᴅᴀᴛᴇsှ᪳𓆪
 ━━━━━━━━━━━━━━━━━━━━━
 `;
-  try {
-    const _0x1b0cc6 = path.join(__dirname, "../assets/bot_image.jpg");
-    if (fs.existsSync(_0x1b0cc6)) {
-      const _0x486c9b = fs.readFileSync(_0x1b0cc6);
-      await _0x388974.sendMessage(_0x215cfa, {
-        'image': _0x486c9b,
-        'caption': _0x27840d,
-        'contextInfo': {
-          'forwardingScore': 0x1,
-          'isForwarded': true,
-          'forwardedNewsletterMessageInfo': {
-            'newsletterJid': '120363203551855118@newsletter',
-            'newsletterName': "𝗠𝗢𝗦𝗘𝗦-𝗫𝗗",
-            'serverMessageId': -0x1
-          }
+
+    try {
+        const imagePath = path.join(__dirname, '../assets/bot_image.jpg');
+        
+        if (fs.existsSync(imagePath)) {
+            const imageBuffer = fs.readFileSync(imagePath);
+            
+            await sock.sendMessage(chatId, {
+                image: imageBuffer,
+                caption: helpMessage,
+                contextInfo: {
+                    forwardingScore: 1,
+                    isForwarded: true,
+                    forwardedNewsletterMessageInfo: {
+                        newsletterJid: '120363203551855118@newsletter',
+                        newsletterName: '𝗠𝗢𝗦𝗘𝗦-𝗫𝗗',
+                        serverMessageId: -1
+                    }
+                }
+            },{ quoted: message });
+        } else {
+            console.error('Bot image not found at:', imagePath);
+            await sock.sendMessage(chatId, { 
+                text: helpMessage,
+                contextInfo: {
+                    forwardingScore: 1,
+                    isForwarded: true,
+                    forwardedNewsletterMessageInfo: {
+                        newsletterJid: '120363203551855118@newsletter',
+                        newsletterName: '𝗠𝗢𝗦𝗘𝗦-𝗫𝗗',
+                        serverMessageId: -1
+                    } 
+                }
+            });
         }
-      });
-    } else {
-      console.error("Bot image not found at:", _0x1b0cc6);
-      await _0x388974.sendMessage(_0x215cfa, {
-        'text': _0x27840d,
-        'contextInfo': {
-          'forwardingScore': 0x1,
-          'isForwarded': true,
-          'forwardedNewsletterMessageInfo': {
-            'newsletterJid': "120363203551855118@newsletter",
-            'newsletterName': "𝗠𝗢𝗦𝗘𝗦-𝗫𝗗",
-            'serverMessageId': -0x1
-          }
-        }
-      });
+    } catch (error) {
+        console.error('Error in help command:', error);
+        await sock.sendMessage(chatId, { text: helpMessage });
     }
-  } catch (_0x316384) {
-    console.error("Error in help command:", _0x316384);
-    await _0x388974.sendMessage(_0x215cfa, {
-      'text': _0x27840d
-    });
-  }
 }
+
 module.exports = helpCommand;
