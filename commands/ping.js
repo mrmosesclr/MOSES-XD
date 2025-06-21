@@ -33,8 +33,6 @@ async function pingCommand(sock, chatId, message) {
 ┃ 🚀 Ping     : ${ping} ms
 ┃ ⏱️ Uptime   : ${uptimeFormatted}
 ┃ 🔖 Version  : ${settings.version}
-
-┃ 🤖 Botname : 𝗠𝗢𝗦𝗘𝗦-𝗫𝗗
 ┗━━━━━━━━━━━━━━━━━━━┛`.trim();
 
         // Reply to the original message with the bot info
